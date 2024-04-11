@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+h1{
+    font-family: "Inconsolata", monospace;
+}
+h4{
+    font-family: "Inconsolata", monospace;
+}
+p{
+    font-family: "Inconsolata", monospace;
+}
+legend{
+    font-family: "Inconsolata", monospace;
+    font-weight: bold;
+}
+label{
+    font-family: "Inconsolata", monospace;
+}
+button{
+    font-family: "Inconsolata", monospace;
+}
