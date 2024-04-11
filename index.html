@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up!</title>
+</head>
+<body style="background-color: rgb(125, 179, 255);">
+    <nav style="height: 5vh; width: 96.8vw; background-color: rgb(238, 238, 238); margin-left: 1vw;">
+        <img src="pisaylogo.png" style="height: 4vh; width: 4vw; padding: 5px;">
+        <h1 style="display: inline-block; position: absolute; bottom: 92.5%;">Pisay Sign-up Sheet for Students!</h1>
+    </nav>
+    <br>
+    <form id="info" action="index.html" onsubmit="return outputFunction();" style="border: 1px solid black; padding: 5px; width: 96vw; margin-left: 1vw; background-color: white;">
+        <fieldset form="info">
+            <legend>Sign-up Form:</legend>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" onfocus="nameFocusFunction()" onblur="nameBlurFunction()">
+
+            <label for="userName">Preferred Username:</label>
+            <input type="text" id="userName" onfocus="usernameFocusFunction()" onblur="usernameBlurFunction()">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" onfocus="emailFocusFunction()" onblur="emailBlurFunction()">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" onfocus="passwordFocusFunction()" onblur="passwordBlurFunction()">
+        
+            <label for="address">Address:</label>
+            <input type="text" id="address" onfocus="addressFocusFunction()" onblur="addressBlurFunction()"><br><br>
+
+            <label for="interests">User's Interest:</label><br>
+            <textarea id="interests" cols="50" rows="10" onfocus="interestsFocusFunction()" onblur="interestsBlurFunction()"></textarea><br>
+
+            <label for="gender">Select Gender:</label>
+            <select name="gender" id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to mention.">Prefer not to mention.</option>
+            </select><br><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset" onclick="resetFD()">Reset</button>
+        </fieldset>
+    </form>
+    <br>
+    <section style="border: 1px solid black; padding: 5px; width: 96vw; margin-left: 1vw; background-color: white;">
+        <fieldset>
+            <legend>User Details:</legend>
+
+            <h4>Name:</h4>
+            <p id="dname"></p>
+            <h4>Preferred Username:</h4>
+            <p id="dusername"></p>
+            <h4>Email Address:</h4>
+            <p id="demail"></p>
+            <h4>Password:</h4>
+            <p id="dpassword"></p>
+            <h4>Address:</h4>
+            <p id="daddress"></p>
+            <h4>User's Interest:</h4>
+            <p id="dinterests"></p>
+            <h4>Gender:</h4>
+            <p id="dgender"></p>
+        </fieldset>
+    </section>
+    <script>
+        var x;
+
+        function outputFunction(){
+            var a, b, c, d, e, f, g;
+
+            a = document.getElementById("name").value;
+            document.getElementById("dname").innerHTML = a;
+
+            b = document.getElementById("userName").value;
+            document.getElementById("dusername").innerHTML = b;
+
+            c = document.getElementById("email").value;
+            document.getElementById("demail").innerHTML = c;
+
+            d = document.getElementById("address").value;
+            document.getElementById("daddress").innerHTML = d;
+
+            e = document.getElementById("password").value;
+            document.getElementById("dpassword").innerHTML = e;
+            
+            f = document.getElementById("interests").value;
+            document.getElementById("dinterests").innerHTML = f;
+
+            g = document.getElementById("gender").value;
+            document.getElementById("dgender").innerHTML = g;
+
+            return false
+        }
+
+        function resetFD(){
+            document.getElementById("dname").innerHTML = " ";
+            document.getElementById("name").style.border = "1px solid black";
+            document.getElementById("dusername").innerHTML = " ";
+            document.getElementById("userName").style.border = "1px solid black";
+            document.getElementById("demail").innerHTML = " ";
+            document.getElementById("email").style.border = "1px solid black";
+            document.getElementById("dpassword").innerHTML = " ";
+            document.getElementById("password").style.border = "1px solid black";
+            document.getElementById("daddress").innerHTML = " ";
+            document.getElementById("address").style.border = "1px solid black";
+            document.getElementById("dinterests").innerHTML = " ";
+            document.getElementById("interests").style.border = "1px solid black";
+            document.getElementById("dgender").innerHTML = " ";
+        }
+
+        function nameBlurFunction(){
+            x = document.getElementById("name");
+            if(x.value == ""){
+                x.style.border = "2px solid red";
+            }
+        }
+        function nameFocusFunction(){
+            x = document.getElementById("name");
+            if(x.value != ""){
+                x.style.border = "2px solid green";
+            }
+        }
+
+        function usernameBlurFunction(){
+            x = document.getElementById("userName");
+            if(x.value == ""){
+                x.style.border = "2px solid red";
+            }
+        }
+        function usernameFocusFunction(){
+            x = document.getElementById("userName");
+            if(x.value != ""){
+                x.style.border = "2px solid green";
+            }
+        }
+
+        function emailBlurFunction(){
+            x = document.getElementById("email");
+            if(x.value == ""){
+                x.style.border = "2px solid red";
+            }
+        }
+        function emailFocusFunction(){
+            x = document.getElementById("email");
+            if(x.value != ""){
+                x.style.border = "2px solid green";
+            }
+        }
+
+        function passwordBlurFunction(){
+            x = document.getElementById("password");
+            if(x.value == ""){
+                x.style.border = "2px solid red";
+            }
+        }
+        function passwordFocusFunction(){
+            x = document.getElementById("password");
+            if(x.value != ""){
+                x.style.border = "2px solid green";
+            }
+        }
+
+        function addressBlurFunction(){
+            x = document.getElementById("address");
+            if(x.value == ""){
+                x.style.border = "2px solid red";
+            }
+        }
+        function addressFocusFunction(){
+            x = document.getElementById("address");
+            if(x.value != ""){
+                x.style.border = "2px solid green";
+            }
+        }
+
+        function interestsBlurFunction(){
+            x = document.getElementById("interests");
+            if(x.value == ""){
+                x.style.border = "2px solid red";
+            }
+        }
+        function interestsFocusFunction(){
+            x = document.getElementById("interests");
+            if(x.value != ""){
+                x.style.border = "2px solid green";
+            }
+        }
+    </script>
+</body>
+</html>
